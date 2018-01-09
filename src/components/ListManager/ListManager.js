@@ -6,11 +6,11 @@ import ListItems from './ListItems';
 
 export default function ListManager(props) {
     return (
-        <div>
-            <ListTitle />
+        <div style={props.cssStyles.container}>
+            <ListTitle listName={props.listDefinitions.listName} />
             <main id="content" role="main">
-                <ListAddForm />
-                <ListItems />
+                <ListAddForm itemDefinitions={props.listDefinitions} formStyles={props.cssStyles.addForm} />
+                <ListItems listStyles={props.cssStyles.ulList} controlLabels={props.listDefinitions.controls} />
             </main>
         </div>
     );
