@@ -20,11 +20,9 @@ export class ListAddForm extends React.Component {
                     <label htmlFor="addItem">{this.props.itemDefinitions.itemLabel}</label>
                     <input
                         type="text"
-                        name="addItem"
-                        id="addItem"
+                        ref={input => this.input = input}
                         placeholder={this.props.itemDefinitions.itemInputPlaceholder}
                         style={this.props.formStyles.inputText}
-                        ref={input => this.textInput = input}
                     />
                     <input
                         type="submit"
