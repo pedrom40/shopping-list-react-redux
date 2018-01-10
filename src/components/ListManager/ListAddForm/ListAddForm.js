@@ -4,6 +4,10 @@ import { addListItem } from '../../../actions';
 
 export class ListAddForm extends React.Component {
 
+    constructor(props) {
+        super(props);
+    }
+
     onSubmit(event) {
         event.preventDefault();
 
@@ -41,4 +45,8 @@ export class ListAddForm extends React.Component {
 
 }
 
-export default connect ()(ListAddForm);
+const mapStateToProps = state => ({
+    list: state.list
+});
+
+export default connect (mapStateToProps)(ListAddForm);
