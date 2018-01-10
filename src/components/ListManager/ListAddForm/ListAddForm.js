@@ -4,10 +4,6 @@ import { addListItem } from '../../../actions';
 
 export class ListAddForm extends React.Component {
 
-    constructor(props) {
-        super(props);
-    }
-
     onSubmit(event) {
         event.preventDefault();
 
