@@ -1,29 +1,27 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
-export default function ListItems(props) {
+export function ListItems(props) {
+
+    const list = props.list.map((item, index) => (
+        <li key={index} style={props.listStyles.lis}>
+            <span style={props.listStyles.lis.itemName}>{item}</span>
+            <div style={props.listStyles.lis.controls}>
+                <button style={props.listStyles.lis.controls.btns}>{props.controlLabels.toggleControlLabel}</button>
+                <button style={props.listStyles.lis.controls.btns}>{props.controlLabels.deleteControlLabel}</button>
+            </div>
+        </li>
+    ));
+
     return (
         <ul style={props.listStyles}>
-            <li style={props.listStyles.lis}>
-                <span style={props.listStyles.lis.itemName}>List Item 1</span>
-                <div style={props.listStyles.lis.controls}>
-                    <button style={props.listStyles.lis.controls.btns}>{props.controlLabels.toggleControlLabel}</button>
-                    <button style={props.listStyles.lis.controls.btns}>{props.controlLabels.deleteControlLabel}</button>
-                </div>
-            </li>
-            <li>
-                <p>List Item 2</p>
-                <div>
-                    <button>Check</button>
-                    <button>Delete</button>
-                </div>
-            </li>
-            <li>
-                <p>List Item 3</p>
-                <div>
-                    <button>Check</button>
-                    <button>Delete</button>
-                </div>
-            </li>
+            {list}
         </ul>
     );
 }
+
+const mapStateToProps = state => ({
+    list: state.list
+});
+
+export default connect (mapStateToProps)(ListItems);
