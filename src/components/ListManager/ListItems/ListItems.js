@@ -9,7 +9,7 @@ export function ListItems(props) {
             <span style={props.listStyles.lis.itemName}>{item}</span>
             <div style={props.listStyles.lis.controls}>
                 <button style={props.listStyles.lis.controls.btns}>{props.controlLabels.toggleControlLabel}</button>
-                <button style={props.listStyles.lis.controls.btns} onClick={this.props.dispatch(deleteListItem(item))}>{props.controlLabels.deleteControlLabel}</button>
+                <button style={props.listStyles.lis.controls.btns} onClick={props.dispatch(deleteListItem(item))}>{props.controlLabels.deleteControlLabel}</button>
             </div>
         </li>
     ));
