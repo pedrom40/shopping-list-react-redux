@@ -14,5 +14,13 @@ export default (state = initialState, action) => {
 
     }
 
+    else if (action.type === actions.DELETE_LIST_ITEM) {
+
+        return Object.assign({}, state, {
+            list: state.list.filter(item => item !== action.item)
+        });
+
+    }
+
     return state;
 };
