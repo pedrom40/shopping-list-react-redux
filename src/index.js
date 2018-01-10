@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Provider} from 'react-redux';
+import { Provider } from 'react-redux';
 import store from './store';
 
 import './index.css';
 import ListManager from './components/ListManager';
-import {listManagerSettings} from './components/ListManager/settings';
+import { listManagerSettings } from './components/ListManager/settings';
 
 ReactDOM.render(
     <Provider store={store}>
